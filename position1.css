@@ -12,7 +12,7 @@ body{
     margin:0px;
     font:normal 12px/18px 'Helvetica', Arial, sans-serif;
     background:rgb(53, 52, 52);
-    min-height: 400vh;
+    min-height: 320vh;
     width: 100vw;
     overflow-x: hidden;
 }
@@ -24,6 +24,36 @@ body{
     border:0px double white ;
 }
 
+#bunny{
+    position:fixed;
+    left:45%;
+    top:50%;
+    border-radius: 50%;
+    
+}
+
+
+#bunnyimg1{
+    
+    border-radius: 50%;
+    max-height: 100px;
+    max-width: 100px;
+    height:auto;
+    width: auto;
+    z-index: 10;
+    box-shadow: 14px 14px 14px #12014f;
+}
+
+#bunnyimg2{
+    margin-left: -70px;
+    border-radius: 50%;
+    box-shadow: 14px 14px 14px #12014f;
+    max-height: 100px;
+    max-width: 100px;
+    height:auto;
+    width: auto;
+    z-index: 10;
+}
 #name{
     position:absolute;
     left:3%;
@@ -199,10 +229,24 @@ a:hover{
     scroll-snap-type: x mandatory;
 }
 
+#imgcontainer_row2 {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 200px;
+    width: 80vw;
+    height: 500px;
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    scroll-behavior: smooth;
+    border-radius: 7px;
+    scroll-snap-type: x mandatory;
+}
+
 .imgcontainer_2 {
     position: relative;
     scroll-snap-align: start;
-    max-height:500px;
+    max-height:300px;
     max-width:80vw;
     width: auto;
     height:auto;
@@ -211,7 +255,7 @@ a:hover{
 
 .catimg {
     row-gap: 10px;
-    max-height:500px;
+    max-height:300px;
     max-width:80vw;
     width: auto;
     height:auto;
@@ -225,7 +269,7 @@ a:hover{
     width: 100%;
     height: 0;
     overflow: hidden;
-    background-color: #0e49ad; /* Red background color */
+    background-color: #4217dc59; /* Red background color */
     transition: height 0.5s ease;
 }
 
@@ -271,8 +315,8 @@ a:hover{
     /* grid-template-columns: auto auto auto; */
     grid-auto-flow: column;
     grid-gap: 0px;
-    row-gap: 250px;
-    column-gap: 10px ;
+    row-gap: 200px;
+    column-gap: 0px ;
     grid-template-areas:
     "a b"
     "c d";
@@ -457,6 +501,26 @@ a:hover{
     background: wheat;
     box-shadow: 6px 6px 6px #faf5f57d;
 }
+
+#catscontent {
+    padding: 40px;
+    position:absolute;
+    top: 500px;
+    left: 10%;
+    right:10%;
+    border:2px dotted #fff;
+    background: #342a4a;
+    font-weight: 20px;
+    font-size: medium;
+    color:#fff;
+}
+#catscontent >img{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: -270px;
+}
+
+
 #container4{
     position:relative;
     margin-top: 70px;

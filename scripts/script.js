@@ -1,5 +1,61 @@
 
 try{
+
+
+
+
+    const bunnycontainer=document.querySelector("#bunny");
+    const bunny1=bunnycontainer.querySelector("#bunnyimg1");
+    const bunny2=bunnycontainer.querySelector("#bunnyimg2");
+        
+
+    let isScrollingDown = false;
+    let scrollingTimeout;
+    let lastScrollPosition  =0;
+
+    function changeImage(scrolling) {
+        if (scrolling) {
+            bunny1.style.opacity=0;
+            bunny2.style.opacity=1;
+        } else {
+            bunny1.style.opacity=1;
+            bunny2.style.opacity=0;
+        }
+    }
+  
+
+    window.addEventListener("scroll", () => {
+        let currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+        clearTimeout(scrollingTimeout);
+
+        if (currentScrollPosition > (lastScrollPosition || 0)) {
+            // Scrolling down
+            if (!isScrollingDown) {
+                isScrollingDown = true;
+                changeImage(true); // Indicate that scrolling down has started
+            }
+        } else {
+            // Scrolling up
+            if (isScrollingDown) {
+                isScrollingDown = false;
+                changeImage(false); // Indicate that scrolling down has ended or scrolling up has started
+            }
+        }
+        
+       
+                
+        scrollingTimeout = setTimeout(() => {
+            if (isScrollingDown) {
+                isScrollingDown = false;
+                changeImage(false); // Indicate that scrolling down has ended
+            }
+        }, 200);// Adjust the timeout value as needed to control when scrolling is considered to have ended
+        lastScrollPosition = currentScrollPosition;
+});
+
+
+
+
     const imgContainers = document.querySelectorAll(".imgcontainer_2");
 
     imgContainers.forEach(container => {
